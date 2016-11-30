@@ -265,12 +265,19 @@ $(function(){
 		if( !back_flag ){
 			theColor();
 		}
-		this.div.onclick = function(){
+		touch.on(this.div,'tap',function(){
 			steps();
 			collision(that,that.direction);
 			success();
 			changeDirTest(that);
-		};
+		});
+		console.log(this)
+		// this.div.onclick = function(){
+		// 	steps();
+		// 	collision(that,that.direction);
+		// 	success();
+		// 	changeDirTest(that);
+		// };
 		document.querySelector('.object-init').appendChild(this.div);
 		this.div.appendChild(this.div.child);
 		cubes.push(this);
@@ -361,10 +368,10 @@ $(function(){
 		},
 		{
 			game:function(){
-				new cube(1,4,0,'up',3);
-				new cube(1,1,1,'down',3);
-				new destination(1,3,0,3);
-				new destination(1,2,1,3);
+				new cube(1,3,0,'up',3);
+				new cube(1,0,1,'down',3);
+				new destination(1,2,0,3);
+				new destination(1,1,1,3);
 				drawColor();
 			}
 		},
