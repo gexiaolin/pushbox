@@ -272,7 +272,6 @@ $(function(){
 			changeDirTest(that);
 		});
 		document.querySelector('.object-init').appendChild(this.div);
-		this.div.appendChild(this.div.child);
 		cubes.push(this);
 	}
 	function destination(x,y,color,rows){
