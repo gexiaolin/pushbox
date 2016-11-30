@@ -427,10 +427,10 @@ $(function(){
 		},
 		{
 			game:function(){
-				new cube(2,1,0,'down',4);
-				new cube(3,3,1,'left',4);
-				new destination(2,5,0,4);
-				new destination(0,4,1,4);
+				new cube(2,0,0,'down',4);
+				new cube(3,2,1,'left',4);
+				new destination(2,4,0,4);
+				new destination(0,3,1,4);
 				drawColor();
 			}
 		},
