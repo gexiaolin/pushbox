@@ -362,7 +362,7 @@ $(function(){
 	};
 	document.querySelector('.reset').onclick = function(){
 		empty();
-		level[num].game();
+		level[Number( localStorage.getItem('_cube_lv') )].game();
 	};
 	document.querySelector('.back').onclick = function(){
 		back_flag = true;
