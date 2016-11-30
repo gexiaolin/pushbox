@@ -242,7 +242,7 @@ $(function(){
 		}else if( el.direction == 'right' ){
 			el.div.innerHTML = '<i class="iconfont icon-path2"></i>'
 		}
-		el.div.appendChild(el.div.child);
+		// el.div.appendChild(el.div.child);
 	}
 	function cube(x,y,color,direction,rows){
 		var that = this;
@@ -265,19 +265,13 @@ $(function(){
 		if( !back_flag ){
 			theColor();
 		}
-		touch.on(this.div,'tap',function(){
+		$(this.div).tap(function(){
+			console.log(1)
 			steps();
 			collision(that,that.direction);
 			success();
 			changeDirTest(that);
 		});
-		console.log(this)
-		// this.div.onclick = function(){
-		// 	steps();
-		// 	collision(that,that.direction);
-		// 	success();
-		// 	changeDirTest(that);
-		// };
 		document.querySelector('.object-init').appendChild(this.div);
 		this.div.appendChild(this.div.child);
 		cubes.push(this);
