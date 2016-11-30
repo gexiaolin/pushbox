@@ -619,19 +619,19 @@ $(function(){
 		},
 		{
 			game:function(){
-				new cube(0,0,0,'down',3);
-				new cube(0,2,1,'right',3);
-				new cube(2,2,2,'up',3);
-				new cube(2,0,3,'left',3);
-				new destination(0,1,0,3);
-				new destination(1,0,1,3);
-				new destination(2,1,2,3);
-				new destination(1,2,3,3);
-				new changeDir(0,0,'down',3);
-				new changeDir(0,2,'right',3);
-				new changeDir(2,2,'up',3);
-				new changeDir(2,0,'left',3);
-				new changeDir(0,4,'up',3);
+				new cube(1,1,0,'down',5);
+				new cube(1,3,1,'right',5);
+				new cube(3,3,2,'up',5);
+				new cube(3,1,3,'left',5);
+				new destination(1,2,0,5);
+				new destination(2,1,1,5);
+				new destination(3,2,2,5);
+				new destination(2,3,3,5);
+				new changeDir(1,1,'down',5);
+				new changeDir(1,3,'right',5);
+				new changeDir(3,3,'up',5);
+				new changeDir(3,1,'left',5);
+				new changeDir(1,5,'up',5);
 				drawColor();
 			}
 		},
