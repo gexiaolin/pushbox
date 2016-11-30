@@ -1,0 +1,125 @@
+html,body,#container{
+	height: 100%;
+}
+#container{
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	padding: 0 .5rem;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background: url(../images/bg.jpg);
+}
+#container .wrap{
+	width: 9rem;
+	height: 100%;
+	position: relative;
+}
+.object-box{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.object-init{
+	position: relative;
+}
+.game-item{
+	position: absolute;
+	-webkit-transition: all .2s ease;
+	transition: all .2s ease;
+	font-size: 30px;
+}
+.game-item .game-el{
+	border-radius: 50%;
+	margin: 20px auto;
+}
+.game-item .game-el img{
+	display: block;
+	margin: 0 auto;
+	width: 60%;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.game-item.cube{
+	z-index: 9999;
+	text-align: center;
+}
+.game-item.cube .iconfont{
+	display: block;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-size: inherit;
+	color: #fff;
+}
+.game-item.point{
+	text-align: center;
+}
+.game-item.point .iconfont{
+	display: block;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-size: inherit;
+	color: #333;
+}
+.game-item.cube div{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../images/in_point.png) no-repeat right top;
+	display: none;
+}
+.footer-tool{
+	position: absolute;
+	bottom: 1.2rem;
+	left: 0;
+	width: 100%;
+	height: 1.4rem;
+}
+.footer-tool li{
+	float: left;
+	height: 1.4rem;
+	width: 33.33%;
+}
+.footer-tool li.back{
+	background: url(../images/back.png) no-repeat center center/auto 60%;
+}
+.footer-tool li.reset{
+	background: url(../images/reset.png) no-repeat center center/auto 60%;
+}
+.footer-tool li.level{
+	background: url(../images/lists.png) no-repeat center center/auto 60%;
+}
+.footer-tool li.back-no{
+	background: url(../images/back_no.png) no-repeat center center/auto 60%;
+}
+.jnc-ad{
+	width: 100%;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	text-align: center;
+	background: #428fd6;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #fff;
+	font-size: .56rem;
+	font-style: italic;
+}
+.jnc-ad i{
+	display: block;
+	height: 100%;
+	position: absolute;
+	bottom: 0;
+	right: .133rem;
+	width: .6rem;
+	background: url(../images/close.png) no-repeat center center/contain;
+}
