@@ -350,10 +350,7 @@ $(function(){
 		document.querySelector('.jnc-ad').style.display = 'none';
 		document.querySelector('.footer-tool').style.bottom = '0';
 	};
-	$(document).swipeUp(function(e){
-		e.preventDefault();
-	});
-	$(document).swipeDown(function(e){
+	$(document).on('touchmove',function(e){
 		e.preventDefault();
 	});
 	var level = [
