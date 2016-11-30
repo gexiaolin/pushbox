@@ -1,5 +1,5 @@
 $(function(){
-	localStorage.setItem('_high_lv',17);
+	localStorage.setItem('_high_lv',19);
 	var cubes = [],
 		level_page = 0,
 		points = [],
@@ -596,6 +596,42 @@ $(function(){
 				new changeDir(0,2,'right',4);
 				new changeDir(3,1,'left',4);
 				new changeDir(2,3,'up',4);
+				drawColor();
+			}
+		},
+		{
+			game:function(){
+				new cube(0,3,0,'down',5);
+				new cube(1,4,1,'down',5);
+				new cube(2,5,2,'up',5);
+				new destination(2,0,0,5);
+				new destination(2,2,1,5);
+				new destination(2,4,2,5);
+				new changeDir(0,6,'right',5);
+				new changeDir(1,5,'right',5);
+				new changeDir(3,4,'left',5);
+				new changeDir(3,6,'up',5);
+				new changeDir(0,3,'down',5);
+				new changeDir(1,4,'down',5);
+				new changeDir(2,5,'up',5);
+				drawColor();
+			}
+		},
+		{
+			game:function(){
+				new cube(0,0,0,'down',3);
+				new cube(0,2,1,'right',3);
+				new cube(2,2,2,'up',3);
+				new cube(2,0,3,'left',3);
+				new destination(0,1,0,3);
+				new destination(1,0,1,3);
+				new destination(2,1,2,3);
+				new destination(1,2,3,3);
+				new changeDir(0,0,'down',3);
+				new changeDir(0,2,'right',3);
+				new changeDir(2,2,'up',3);
+				new changeDir(2,0,'left',3);
+				new changeDir(0,4,'up',3);
 				drawColor();
 			}
 		},
