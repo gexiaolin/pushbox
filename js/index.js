@@ -11,6 +11,7 @@ $(function(){
 		steps_order = [],
 		back_flag = false,
 		step_num = 0,
+		localStorage.setItem('_high_lv',17),
 		current_num = Number(localStorage.getItem('_high_lv')) || 0;
 	function selectLevel(){
 		var all_page = $('.level-page').length;
