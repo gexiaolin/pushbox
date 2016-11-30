@@ -12,6 +12,14 @@
 	</script>
 </head>
 <body>
+
+	<div id="loading">
+		<div class="wrap">
+			<img src="images/logo.png">
+			<h1>中国电动汽车跨界平台运营商</h1>
+			<p>游戏载入中.</p>
+		</div>
+	</div>
 	
 	<div id="container">
 		<div class="wrap main">
@@ -31,6 +39,7 @@
 			<i class="ad-close"></i>
 		</div>
 		<div class="level-selector">
+			<i class="level-close"></i>
 			<p>通关进程</p>
 			<i class="level-left"></i>
 			<i class="level-right"></i>
@@ -145,9 +154,82 @@
 				</li>
 			</ul>
 		</div>
+
+		<div class="success-level">
+			<div class="m-success">
+				<p class="success-title">恭喜过关</p>
+				<p class="success-tips">下一关继续加油哦！</p>
+				<div class="success-do clearfix">
+					<div class="do-share">
+						<i></i>
+						<p>炫耀</p>
+					</div>
+					<div class="do-next">
+						<i></i>
+						<p>下一关</p>
+					</div>
+				</div>
+			</div>
+			<div class="success-ad">
+				<p>占位符</p>
+			</div>
+		</div>
 	</div>
 			
 	<script src="js/zepto.min.js"></script>
 	<script src="js/index.js"></script>
+	<script>
+		;(function(){
+			var images = new Array()
+		    var key = 0;
+		    var text = ['游戏载入中.','游戏载入中..','游戏载入中...'];
+		    var num = 0;
+		    function preload() {
+		        for (i = 0; i < preload.arguments.length; i++) {
+		            images[i] = new Image();
+		            images[i].src = preload.arguments[i];
+		            if( i == preload.arguments.length - 1 ){
+		                key = 1;
+		            }
+		        }
+		    };
+		    preload(
+		    	"images/logo.png",
+		        "images/back.png",
+		        "images/back_no.png",
+		        "images/bg.jpg",
+		        "images/block.png",
+		        "images/close.png",
+		        "images/icon_next.png",
+		        "images/icon_share.png",
+		        "images/in_point.png",
+		        "images/level_close.png",
+		        "images/lists.png",
+		        "images/next.png",
+		        "images/point_logo.png",
+		        "images/prev.png",
+		        "images/reset.png"
+		    );
+		    var t = setInterval(function(){
+		    	if( num == 2 ){
+		    		num = 0;
+		    	}else{
+		    		num += 1;
+		    	}
+		    	$('#loading p').text( text[num] );
+		    },500);
+		    function load(){
+		    	setTimeout(function(){
+		    		if( key == 1 ){
+		    			clearInterval(t);
+		    			$('#loading').css({display:'none'});
+		    		}else{
+		    			load();
+		    		}
+		    	},1500);
+		    }
+		    load();
+		})();
+	</script>
 </body>
 </html>

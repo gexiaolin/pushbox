@@ -1,5 +1,4 @@
 $(function(){
-	localStorage.setItem('_high_lv',19);
 	var cubes = [],
 		level_page = 0,
 		points = [],
@@ -25,30 +24,6 @@ $(function(){
 			$('.level-left,.level-right').css({display:'block'});
 		}
 	};
-	$('.level-right').tap(function(){
-		level_page += 1;
-		$('.all-pages').css({left: -level_page * 100 + '%'});
-		selectLevel();
-	});
-	$('.level-left').tap(function(){
-		level_page -= 1;
-		$('.all-pages').css({left: -level_page * 100 + '%'});
-		selectLevel();
-	});
-	$('.level-page').delegate('.unlock','tap',function(){
-		var num = Number( $(this).children('.level-top').text() ) - 1;
-		localStorage.setItem('_cube_lv',num);
-		$('.level-selector').css({display:'none'});
-		empty();
-		level[num].game();
-	});
-	$('.level').tap(function(){
-		var all_level = Number( localStorage.getItem('_high_lv') ) + 1;
-		for( var i = 0; i < all_level; i ++ ){
-			$('.level-page li').eq(i).addClass('unlock');
-		};
-		$('.level-selector').css({display:'block'});
-	});
 	function theColor(){
 		var color_num = Math.floor( Math.random() * (colors.length - 1 ) );
 		current_color.push( colors[color_num] );
@@ -258,11 +233,14 @@ $(function(){
 		};
 		if( flag ){
 			setTimeout(function(){
-				alert('success');
 				var level_number = Number( localStorage.getItem('_cube_lv') );
 				if( level_number + 1 == level.length ){
-					alert('通关！');
+					document.querySelector('.success-tips').innerHTML = '您已通过所有关卡！';
+					document.querySelector('.do-next').style.display = 'none';
+					document.querySelector('.do-share').style.margin = '0 auto';
+					document.querySelector('.success-level').style.display = 'block';
 				}else{
+					document.querySelector('.success-level').style.display = 'block';
 					level_number += 1;
 					localStorage.setItem('_cube_lv',level_number);
 					if( localStorage.getItem('_high_lv') && level_number < localStorage.getItem('_high_lv') ){
@@ -271,10 +249,16 @@ $(function(){
 						localStorage.setItem('_high_lv',level_number);
 					}
 				}
-				empty();
-				level[level_number].game();
 			},200);
 		}
+	}
+	function share(){
+		
+	}
+	function next(){
+		empty();
+		level[Number( localStorage.getItem('_cube_lv') )].game();
+		document.querySelector('.success-level').style.display = 'none';
 	}
 	function arrow(el){
 		if( el.direction == 'up' ){
@@ -394,8 +378,36 @@ $(function(){
 		document.querySelector('.jnc-ad').style.display = 'none';
 		document.querySelector('.footer-tool').style.bottom = '0';
 	};
+	$('.do-next').tap(next);
 	$(document).on('touchmove',function(e){
 		e.preventDefault();
+	});
+	$('.level-right').tap(function(){
+		level_page += 1;
+		$('.all-pages').css({left: -level_page * 100 + '%'});
+		selectLevel();
+	});
+	$('.level-left').tap(function(){
+		level_page -= 1;
+		$('.all-pages').css({left: -level_page * 100 + '%'});
+		selectLevel();
+	});
+	$('.level-page').delegate('.unlock','tap',function(){
+		var num = Number( $(this).children('.level-top').text() ) - 1;
+		localStorage.setItem('_cube_lv',num);
+		$('.level-selector').css({display:'none'});
+		empty();
+		level[num].game();
+	});
+	$('.level').tap(function(){
+		var all_level = Number( localStorage.getItem('_high_lv') ) + 1;
+		for( var i = 0; i < all_level; i ++ ){
+			$('.level-page li').eq(i).addClass('unlock');
+		};
+		$('.level-selector').css({display:'block'});
+	});
+	$('.level-close').tap(function(){
+		$('.level-selector').css({display:'none'});
 	});
 	var level = [
 		{
