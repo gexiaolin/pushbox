@@ -1,5 +1,6 @@
 $(function(){
 	var cubes = [],
+		level_page = 0,
 		points = [],
 		change_points = [],
 		colors = ['#a23f9c','#4ca9d8','#fbc45a','#6ec471','#f45958','#8d8ea3','#533637','#269a9a'],
@@ -10,7 +11,43 @@ $(function(){
 		steps_order = [],
 		back_flag = false,
 		step_num = 0,
-		num = Number(localStorage.getItem('_cube_lv')) || 0;
+		current_num = Number(localStorage.getItem('_high_lv')) || 0;
+	function selectLevel(){
+		var all_page = $('.level-page').length;
+		if( level_page == 0 ){
+			$('.level-left').css({display:'none'});
+			$('.level-right').css({display:'block'});
+		}else if( level_page == all_page - 1 ){
+			$('.level-right').css({display:'none'});
+			$('.level-left').css({display:'block'});
+		}else{
+			$('.level-left,.level-right').css({display:'block'});
+		}
+	};
+	$('.level-right').tap(function(){
+		level_page += 1;
+		$('.all-pages').css({left: -level_page * 100 + '%'});
+		selectLevel();
+	});
+	$('.level-left').tap(function(){
+		level_page -= 1;
+		$('.all-pages').css({left: -level_page * 100 + '%'});
+		selectLevel();
+	});
+	$('.level-page').delegate('.unlock','tap',function(){
+		var num = Number( $(this).children('.level-top').text() ) - 1;
+		localStorage.setItem('_cube_lv',num);
+		$('.level-selector').css({display:'none'});
+		empty();
+		level[num].game();
+	});
+	$('.level').tap(function(){
+		var all_level = Number( localStorage.getItem('_high_lv') ) + 1;
+		for( var i = 0; i < all_level; i ++ ){
+			$('.level-page li').eq(i).addClass('unlock');
+		};
+		$('.level-selector').css({display:'block'});
+	});
 	function theColor(){
 		var color_num = Math.floor( Math.random() * (colors.length - 1 ) );
 		current_color.push( colors[color_num] );
@@ -221,14 +258,20 @@ $(function(){
 		if( flag ){
 			setTimeout(function(){
 				alert('success');
-				if( num + 1 == level.length ){
+				var level_number = Number( localStorage.getItem('_cube_lv') );
+				if( level_number + 1 == level.length ){
 					alert('通关！');
 				}else{
-					num += 1;
-					localStorage.setItem('_cube_lv',Number(num));
+					level_number += 1;
+					localStorage.setItem('_cube_lv',level_number);
+					if( localStorage.getItem('_high_lv') && level_number < localStorage.getItem('_high_lv') ){
+						
+					}else{
+						localStorage.setItem('_high_lv',level_number);
+					}
 				}
 				empty();
-				level[num].game();
+				level[level_number].game();
 			},200);
 		}
 	}
@@ -556,6 +599,5 @@ $(function(){
 			}
 		},
 	];
-	level[num].game();
-	
+	level[current_num].game();
 });
