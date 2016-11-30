@@ -242,7 +242,7 @@ $(function(){
 		}else if( el.direction == 'right' ){
 			el.div.innerHTML = '<i class="iconfont icon-path2"></i>'
 		}
-		// el.div.appendChild(el.div.child);
+		el.div.appendChild(el.div.child);
 	}
 	function cube(x,y,color,direction,rows){
 		var that = this;
@@ -266,7 +266,6 @@ $(function(){
 			theColor();
 		}
 		$(this.div).tap(function(){
-			console.log(1)
 			steps();
 			collision(that,that.direction);
 			success();
