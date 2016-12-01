@@ -581,7 +581,7 @@ body,
 
     width: 7.866rem;
     height: 4.934rem;
-    margin-top: -2.467rem;
+    margin-top: -3.5rem;
     margin-left: -3.933rem;
 
     border-radius: 5px;
@@ -667,9 +667,55 @@ body,
     left: 0;
 
     width: 100%;
-    height: 2.6666rem;
+    height: 2.667rem;
 
-    background: #428fd6;
+    background: #69cefb;
+}
+.success-level .success-ad .jnc-logo
+{
+    float: left;
+
+    width: 2.667rem;
+    height: 100%;
+
+    background: #96ddfc url(../images/jnc_logo.png) no-repeat center center/80% auto;
+}
+.success-level .success-ad .jnc-des
+{
+    float: left;
+
+    width: 7rem;
+    height: 100%;
+    margin-left: .3rem;
+}
+.success-level .success-ad .jnc-des h1
+{
+    font-size: .853rem;
+    line-height: 1rem;
+
+    margin-top: .5rem;
+
+    color: #fff;
+}
+.success-level .success-ad .jnc-des p
+{
+    font-size: .6rem;
+    line-height: .8rem;
+
+    text-align: left;
+}
+.success-level .success-ad .jnc-close
+{
+    position: absolute;
+    right: .133rem;
+    bottom: 0;
+
+    display: block;
+
+    width: .6rem;
+    height: 100%;
+
+    background: url(../images/close.png) no-repeat center .133rem/contain;
 }
 .success-level .success-ad p
 {
@@ -680,4 +726,58 @@ body,
     text-align: center;
 
     color: #fff;
+}
+.ad-pannel
+{
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: none;
+
+    background: rgba(0, 0, 0, .3);
+}
+.ad-pannel .ad-model
+{
+    position: relative;
+
+    width: 8.93rem;
+    height: 14.67rem;
+    margin: .66rem auto;
+
+    background: url(../images/ad1.jpg) no-repeat center center/contain;
+}
+.ad-pannel .ad-model .ad-pannel-close
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: block;
+
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.ad-pannel .ad-model .to-download
+{
+    position: absolute;
+    top: 10.5rem;
+    left: .5rem;
+
+    display: block;
+
+    width: 4.8rem;
+    height: 1.2rem;
+
+    border-radius: 5px;
+}
+.ad-pannel .ad-model .to-download a
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
 }

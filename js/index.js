@@ -362,9 +362,20 @@ $(function(){
 		}
 		success();
 	});
-	$('.ad-close').tap(function(){
+	$('.ad-close').tap(function(e){
+		e.stopPropagation();
 		document.querySelector('.jnc-ad').style.display = 'none';
 		document.querySelector('.footer-tool').style.bottom = '0';
+	});
+	$('.jnc-close').tap(function(e){
+		e.stopPropagation();
+		$('.success-ad').css({display:'none'});
+	});
+	$('.jnc-ad,.success-ad').tap(function(){
+		$('.ad-pannel').css({display:'block'});
+	});
+	$('.ad-pannel-close').tap(function(){
+		$('.ad-pannel').css({display:'none'});
 	});
 	$('.do-next').tap(next);
 	$(document).on('touchmove',function(e){
