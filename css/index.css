@@ -71,6 +71,8 @@ body,
 {
     position: relative;
 
+    overflow: visible;
+
     width: 9rem;
     height: 100%;
 }
