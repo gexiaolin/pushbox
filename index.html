@@ -20,6 +20,33 @@
 			<p>游戏载入中.</p>
 		</div>
 	</div>
+
+	<div class="start-page">
+		<div class="wrap">
+			<h1>TITLE</h1>
+			<div class="game-show clearfix">
+				<i class="hand"></i>
+				<i class="touch-point"></i>
+				<div class="dashed-left"></div>
+				<div class="show-left">
+					<i class="iconfont icon-path2"></i>
+					<span></span>
+				</div>
+				<div class="show-right">
+					<div class="to-point"></div>
+				</div>
+			</div>
+			<div class="game-des">点击方块，将其推到目标位置</div>
+			<div class="start-game">
+				开始游戏
+				<div class="btn-bottom"></div>
+			</div>
+			<div class="jnc-ad">
+				<p>下载聚能充就送50元电费</p>
+				<i class="ad-close"></i>
+			</div>
+		</div>
+	</div>
 	
 	<div id="container">
 		<div class="wrap main">
@@ -208,7 +235,11 @@
 		        "images/next.png",
 		        "images/point_logo.png",
 		        "images/prev.png",
-		        "images/reset.png"
+		        "images/reset.png",
+		        "images/start_bg.png",
+		        "images/hand.png",
+		        "images/touch_point.png",
+		        "images/line_border.png"
 		    );
 		    var t = setInterval(function(){
 		    	if( num == 2 ){
@@ -223,6 +254,11 @@
 		    		if( key == 1 ){
 		    			clearInterval(t);
 		    			$('#loading').css({display:'none'});
+		    			// if( localStorage.getItem('_high_lv') && localStorage.getItem('_high_lv') > 0 ){
+		    				
+		    			// }else{
+		    			// 	$('.start-page').css({display:'block'});
+		    			// }
 		    		}else{
 		    			load();
 		    		}

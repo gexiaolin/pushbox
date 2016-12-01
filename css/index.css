@@ -76,6 +76,175 @@ body,
     width: 9rem;
     height: 100%;
 }
+
+.start-page
+{
+    position: absolute;
+    z-index: 10001;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: none;
+
+    background: url(../images/bg.jpg) repeat;
+}
+.start-page .wrap
+{
+    position: relative;
+
+    height: 100%;
+}
+.start-page h1
+{
+    text-align: center;
+}
+.start-page .game-show
+{
+    position: relative;
+
+    width: 8.667rem;
+    height: 3.68rem;
+    margin: 0 auto .667rem;
+
+    border: .08rem solid #69cefb;
+    border-radius: 5px;
+    background: #fff;
+}
+.start-page .game-show .show-left
+{
+    float: left;
+
+    width: 2.613rem;
+    height: 2.613rem;
+    margin-top: .533rem;
+    margin-left: 1.733rem;
+
+    background: #f45958;
+}
+.start-page .game-show .dashed-left
+{
+    position: absolute;
+    top: .533rem;
+    left: 1.733rem;
+
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 2.613rem;
+    height: 2.613rem;
+
+    border: 1px dashed #f45958;
+}
+.start-page .game-show .show-right
+{
+    float: left;
+
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 2.613rem;
+    height: 2.613rem;
+    margin-top: .533rem;
+
+    border: 1px dashed #f45958;
+}
+.start-page .game-show .to-point
+{
+    width: .96rem;
+    height: .96rem;
+    margin: .826rem auto;
+
+    border-radius: 50%;
+    background: #f45958 url(../images/point_logo.png) no-repeat center center/70% auto;
+}
+.start-page .game-show .touch-point
+{
+    position: absolute;
+    top: 1.2rem;
+    left: 2.45rem;
+
+    display: block;
+
+    width: 1.1rem;
+    height: 1.1rem;
+
+    background: url(../images/touch_point.png) no-repeat center center/contain;
+}
+.start-page .game-show .hand
+{
+    position: absolute;
+    z-index: 9999;
+    top: 1.7rem;
+    left: 3rem;
+
+    display: block;
+
+    width: 2rem;
+    height: 2rem;
+
+    background: url(../images/hand.png) no-repeat center center/contain;
+}
+.start-page .game-des
+{
+    font-size: .533rem;
+    font-weight: bold;
+    line-height: 1.2rem;
+
+    width: 8.8rem;
+    height: 1.2rem;
+    margin: 0 auto 1.467rem;
+
+    text-align: center;
+
+    color: #f45958;
+    background: url(../images/line_border.png) no-repeat center center/contain;
+}
+.start-page .start-game
+{
+    font-size: .64rem;
+    font-weight: bold;
+    line-height: 1.333rem;
+
+    position: relative;
+
+    width: 6.4rem;
+    margin: 0 auto;
+
+    text-align: center;
+    text-align: center;
+
+    color: #fff;
+    border-radius: 5px;
+    background: #69cefb;
+}
+.start-page .start-game .btn-bottom
+{
+    position: absolute;
+    z-index: -1;
+    bottom: -5px;
+    left: 0;
+
+    width: 6.4rem;
+    height: 1.333rem;
+
+    border-radius: 5px;
+    background: #23bbff;
+}
+.start-page .game-show .iconfont
+{
+    font-size: 1rem;
+    line-height: 2.613rem;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+
+    color: #fff;
+}
+
 .object-box
 {
     position: absolute;
