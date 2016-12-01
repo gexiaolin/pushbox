@@ -11,6 +11,7 @@ $(function(){
 		back_flag = false,
 		step_num = 0,
 		current_num = Number(localStorage.getItem('_high_lv')) || 0;
+	localStorage.setItem('_cube_lv',current_num);
 	function selectLevel(){
 		var all_page = $('.level-page').length;
 		if( level_page == 0 ){
