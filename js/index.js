@@ -364,8 +364,8 @@ $(function(){
 	});
 	$('.ad-close').tap(function(e){
 		e.stopPropagation();
-		document.querySelector('.jnc-ad').style.display = 'none';
-		document.querySelector('.footer-tool').style.bottom = '0';
+		$('.jnc-ad').css({display:'none'});
+		$('.footer-tool').css({bottom:'0'});
 	});
 	$('.jnc-close').tap(function(e){
 		e.stopPropagation();
