@@ -207,7 +207,8 @@ $(function(){
 		}else{
 			document.querySelector('.back').className = 'back';
 		}
-	}
+	};
+	var pass_text = ['下一关，再接再厉喔！','棒棒哒，继续努力！','哟呵，真不错！','加油，不要停！','是时候向朋友炫耀一下了！','这关对你来说太简单了吧！','转发，是最低调的炫耀','通关有望，继续加油~','人类已经阻止不了你上天了','我就看看你能通关不'];
 	function success(){
 		var flag = true;
 		for( var i = 0; i < cubes.length; i ++ ){
@@ -222,13 +223,13 @@ $(function(){
 			setTimeout(function(){
 				var level_number = Number( localStorage.getItem('_cube_lv') );
 				if( level_number + 1 == level.length ){
-					document.querySelector('.success-tips').innerHTML = '更多关卡敬请期待！';
+					document.querySelector('.success-tips').innerHTML = '大侠，我们还会回来的，敬请期待...';
 					document.querySelector('.do-next').style.display = 'none';
 					document.querySelector('.do-share').style.margin = '0 auto';
 					document.querySelector('.success-level').style.display = 'block';
 					document.querySelector('.do-share').style.float = 'none';
 				}else{
-					document.querySelector('.success-tips').innerHTML = '下一关继续加油哦！';
+					document.querySelector('.success-tips').innerHTML = pass_text[ Math.floor(Math.random() * 10) ];
 					document.querySelector('.do-share').style.margin = '0 1.667rem 0 1.42rem';
 					document.querySelector('.do-share').style.float = 'left';
 					document.querySelector('.do-next').style.display = 'block';
